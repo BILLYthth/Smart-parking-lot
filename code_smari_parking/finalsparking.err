@@ -1,0 +1,6 @@
+>>> Warning 207 "finalsparking.c" Line 150(18,19): Code has no effect
+>>> Warning 202 "finalsparking.c" Line 29(17,28): Variable never used:   current_lcd
+>>> Warning 202 "finalsparking.c" Line 30(5,15): Variable never used:   current_rs
+>>> Warning 202 "finalsparking.c" Line 31(5,15): Variable never used:   current_re
+      Memory usage:   ROM=12%      RAM=4% - 10%
+      0 Errors,  4 Warnings.

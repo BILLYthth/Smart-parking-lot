@@ -1,0 +1,24 @@
+[PROJECT]
+Target=C:\Vu Thanh Dat\Study textbooks and lectures\Microprocessor\final program\code\refer\final.hex
+Development_Mode=
+Processor_Text=PIC16F887
+ToolSuite=CCS
+Processor=0x887F
+[C:\Vu Thanh Dat\Study textbooks and lectures\Microprocessor\final program\code\refer\final]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\Vu Thanh Dat\Study textbooks and lectures\Microprocessor\final program\code\refer\final.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=C:\Vu Thanh Dat\Study textbooks and lectures\Microprocessor\final program\code\refer\final
+[Opened Files]
+1=final.c
+2=

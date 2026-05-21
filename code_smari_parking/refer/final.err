@@ -1,0 +1,6 @@
+>>> Warning 202 "final.c" Line 25(7,10): Variable never used:   cnt
+>>> Warning 202 "final.c" Line 26(20,34): Variable never used:   overflow_count
+>>> Warning 202 "final.c" Line 27(13,20): Variable never used:   minutes
+>>> Warning 202 "final.c" Line 104(19,27): Variable never used:   duration
+      Memory usage:   ROM=13%      RAM=6% - 15%
+      0 Errors,  4 Warnings.

@@ -1,0 +1,155 @@
+#include "C:\Vu Thanh Dat\Study textbooks and lectures\Microprocessor\final program\code\finalsparking.h"
+
+
+
+
+//define lcd ports.
+
+#BIT    TIMER1IF = 0x0c.0 // bit o of piro register.
+#define rs   PIN_E0
+#define rw   PIN_E1
+#define e    PIN_E2
+#define rs1   PIN_A5
+#define rw1  PIN_A6
+#define e1    PIN_A7
+
+
+#define lcd_port   PORTD  // If using output_d()
+
+#define trg1 PIN_C0
+#define trg2 PIN_C1
+#define trg3 PIN_C2
+#define trg4 PIN_C3
+
+#define echo1 PIN_C4
+#define echo2 PIN_C5
+#define echo3 PIN_C6
+#define echo4 PIN_C7
+
+int current_lcd = 1;
+int current_rs;
+int current_re;
+unsigned int8 cnt = 0, d1=0, d2=0, d3=0, d4=0;
+// command for the lcd1. 
+void lcd1_command (unsigned int8 cmd)
+{
+  output_low(rw);
+  output_low(rs); //rs=0.
+  output_d(cmd);
+  output_low(e);
+  output_high(e);
+  delay_ms(1);
+}
+// function to control the lcd  data.
+void lcd1_data(unsigned int8 data)
+{
+  output_low(rw);
+  output_high(rs); //rs=1.
+  output_d(data);
+  output_low(e);
+  output_high(e);
+  delay_ms(1);
+}
+// setup the lcd. 
+void lcd1_setup()
+{
+   
+   lcd1_command(0x38);
+   
+   lcd1_command(0x0c);
+   lcd1_command(0x06);
+   lcd1_command(0x01);
+   
+}
+// command for the lcd2. 
+void lcd2_command (unsigned int8 cmd)
+{
+  output_low(rw1);
+  output_low(rs1); //rs=0.
+  output_d(cmd);
+  output_low(e1);
+  output_high(e1);
+  
+}
+// function to control the lcd  data.
+void lcd2_data(unsigned int8 data)
+{
+  output_low(rw1);
+  output_high(rs1); //rs=1.
+  output_d(data);
+  output_low(e1);
+  output_high(e1);
+  
+}
+// setup the lcd. 
+void lcd2_setup()
+{
+  
+   lcd2_command(0x38);
+   
+   lcd2_command(0x0c);
+   lcd2_command(0x06);
+   lcd2_command(0x01);
+   
+}
+//sensor
+void trigger_sensor(trigger_pin) {
+   output_high(trigger_pin);
+   delay_us(10);
+   output_low(trigger_pin);
+}
+//distance
+unsigned int16 measure_distance(trigger_pin, echo_pin) {
+   
+   trigger_sensor(trigger_pin);
+   
+   // echo go high
+   while(!input(echo_pin));
+   TIMER1IF = 0;
+   set_timer1(0);
+   //pulse
+   while(input(echo_pin));
+   cnt = get_timer1();
+
+   return (cnt *1.6 )/ 58;
+}
+void main()
+{
+   set_tris_d(0x00);
+   set_tris_e(0x00);
+     
+   set_tris_c(0b11110000);
+   lcd1_setup();
+   lcd2_setup();
+  
+   
+   setup_timer_1(T1_internal | T1_DIV_BY_2);
+  
+   
+   
+   while(true)
+   {  
+      d1 = measure_distance(trg1, echo1);
+      d2 = measure_distance(trg2, echo2);
+      d3 = measure_distance(trg3, echo3);
+      d4 = measure_distance(trg4, echo4);
+      unsigned int8  a =4; 
+      if(d1 > 0x00)a--;
+      else a = a;
+      if(d2 > 0x00) a--;
+      else a = a;
+//!      if(d3 > 0x00)a--;
+//!      else a = a;S
+      if(d4 > 0x00) a--;
+      else a = a;
+      lcd1_command(0x80);
+      lcd1_data("ava slot:");
+
+      lcd1_data(a + '0');
+      delay_ms(100);
+      if (d1 > 50); 
+      lcd2_command(0x80);
+      lcd2_data("too far");
+      delay_ms(100);
+   }
+}

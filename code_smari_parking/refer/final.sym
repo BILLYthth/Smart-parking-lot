@@ -1,0 +1,127 @@
+004     @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020-021 time1
+022-023 time2
+024-025 time3
+026-027 time4
+028     slot1
+029     slot2
+02A     slot3
+02B     slot4
+02C-02D cnt
+02E     overflow_count
+02F     minutes
+030     @TRIS_C
+031-032 d1
+033-034 d2
+035-036 d3
+037-038 d4
+039     a
+03A     lcd1_command.cmd
+03A     lcd2_command.cmd
+03A     measure_distance.pin_trigger
+03A     MAIN.@SCRATCH1
+03A     @PSTRINGC7_81.@SCRATCH1
+03B     measure_distance.pin_echo
+03B     @PSTRINGC7_81.@SCRATCH2
+03C-03D measure_distance.duration
+03C     @PSTRINGC7_81.@SCRATCH3
+03D     lcd1_data.data
+03E     measure_distance.count
+03E     @delay_ms1.P1
+03F-040 @ITOF.P1
+03F-042 @SFTOI.P2
+03F     @READBITA.P3
+03F-042 @MULFF.P4
+03F     @WRITEBITA.P5
+03F     measure_distance.@SCRATCH1
+040-041 @READBITA.P1
+040     @WRITEBITA.P2
+040     measure_distance.@SCRATCH2
+041-042 @WRITEBITA.P1
+041     measure_distance.@SCRATCH3
+042     measure_distance.@SCRATCH4
+043-046 @MULFF.P1
+043-046 @DIVFF.P2
+047-04A @DIVFF.P1
+047     @MULFF.@SCRATCH1
+048     @MULFF.@SCRATCH2
+049     @MULFF.@SCRATCH3
+04A     @MULFF.@SCRATCH4
+04B     @MULFF.@SCRATCH5
+04B     @DIVFF.@SCRATCH1
+04C     @DIVFF.@SCRATCH2
+04D     @DIVFF.@SCRATCH3
+04E     @DIVFF.@SCRATCH4
+04F     @DIVFF.@SCRATCH5
+050     @DIVFF.@SCRATCH6
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000D  @delay_ms1
+0021  lcd1_command
+02C1  lcd1_data
+0053  lcd2_command
+0041  lcd1_init
+0073  lcd2_init
+00BC  measure_distance
+0085  @WRITEBITA
+00A5  @READBITA
+011A  @ITOF
+0146  @MULFF
+01D0  @DIVFF
+02A1  @SFTOI
+0327  MAIN
+0004  @const123
+02E1  @PSTRINGC7_81
+0009  @const126
+0327  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Vu Thanh Dat\Study textbooks and lectures\Microprocessor\final program\code\refer\
+
+Project Files:
+    final.c
+    final.h
+    ..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F887.h
+
+Units:
+    C:\Vu Thanh Dat\Study textbooks and lectures\Microprocessor\final program\code\refer\final (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      final.err
+    Ext Symbols: final.esym
+    INHX8:       final.hex
+    Symbols:     final.sym
+    List:        final.lst
+    Debug/COFF:  final.cof
+    Project:     final.PJT
+    Call Tree:   final.tre
+    Statistics:  final.sta

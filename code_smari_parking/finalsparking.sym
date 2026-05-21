@@ -1,0 +1,127 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+00C.0   TIMER1IF
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     current_lcd
+021     current_rs
+022     current_re
+023     cnt
+024     d1
+025     d2
+026     d3
+027     d4
+028     @TRIS_C
+029     a
+02A     lcd2_command.cmd
+02A     lcd1_command.cmd
+02A     measure_distance.trigger_pin
+02A     MAIN.@SCRATCH1
+02A     @PSTRINGC7_79.@SCRATCH1
+02A     @PSTRINGC7_84.@SCRATCH1
+02B     measure_distance.echo_pin
+02B     @PSTRINGC7_79.@SCRATCH2
+02B     @PSTRINGC7_84.@SCRATCH2
+02C     trigger_sensor.trigger_pin
+02C-02F @SFTOI.P1
+02C-02D @ITOF.P2
+02C     @READBITA.P3
+02C-02F @MULFF.P4
+02C     measure_distance.@SCRATCH1
+02C     @PSTRINGC7_79.@SCRATCH3
+02C     @PSTRINGC7_84.@SCRATCH3
+02D-02E @READBITA.P1
+02D     @WRITEBITA.P2
+02D     lcd1_data.data
+02D     lcd2_data.data
+02D     measure_distance.@SCRATCH2
+02E     @delay_ms1.P1
+02E     @WRITEBITA.P2
+02E     measure_distance.@SCRATCH3
+02F-030 @WRITEBITA.P1
+02F     measure_distance.@SCRATCH4
+030-033 @MULFF.P1
+030-033 @DIVFF.P2
+034-037 @DIVFF.P1
+034     @MULFF.@SCRATCH1
+035     @MULFF.@SCRATCH2
+036     @MULFF.@SCRATCH3
+037     @MULFF.@SCRATCH4
+038     @MULFF.@SCRATCH5
+038     @DIVFF.@SCRATCH1
+039     @DIVFF.@SCRATCH2
+03A     @DIVFF.@SCRATCH3
+03B     @DIVFF.@SCRATCH4
+03C     @DIVFF.@SCRATCH5
+03D     @DIVFF.@SCRATCH6
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000D  @delay_ms1
+0021  lcd1_command
+029C  lcd1_data
+003A  lcd1_setup
+0049  lcd2_command
+02FD  lcd2_data
+005F  lcd2_setup
+00A7  trigger_sensor
+006E  @WRITEBITA
+00A5  measure_distance
+008E  @READBITA
+00F5  @ITOF
+0121  @MULFF
+01AB  @DIVFF
+027C  @SFTOI
+035B  MAIN
+0004  @const113
+02B5  @PSTRINGC7_79
+0009  @const115
+0313  @PSTRINGC7_84
+035B  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Vu Thanh Dat\Study textbooks and lectures\Microprocessor\final program\code\
+
+Project Files:
+    finalsparking.c
+    finalsparking.h
+    ..\..\..\..\..\Program Files (x86)\PICC\devices\16F887.h
+
+Units:
+    C:\Vu Thanh Dat\Study textbooks and lectures\Microprocessor\final program\code\finalsparking (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      finalsparking.err
+    Ext Symbols: finalsparking.esym
+    INHX8:       finalsparking.hex
+    Symbols:     finalsparking.sym
+    List:        finalsparking.lst
+    Debug/COFF:  finalsparking.cof
+    Project:     finalsparking.PJT
+    Call Tree:   finalsparking.tre
+    Statistics:  finalsparking.sta
